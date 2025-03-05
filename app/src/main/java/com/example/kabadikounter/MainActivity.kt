@@ -1,4 +1,4 @@
-package com.example.minggu_3
+package com.example.kabadikounter
 
 import android.os.Bundle
 import android.widget.Button
