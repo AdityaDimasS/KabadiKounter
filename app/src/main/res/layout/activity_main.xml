@@ -14,7 +14,7 @@
         android:layout_height="48dp"
         android:background="?attr/colorPrimary"
         android:gravity="center"
-        android:text="Kabad iKounter"
+        android:text="Kabadi Kounter"
         android:backgroundTint="#441752"
         android:textColor="@android:color/white"
         android:textSize="16sp"
