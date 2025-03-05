@@ -7,13 +7,157 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Toolbar atau Header -->
     <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="?attr/colorPrimary"
+        android:gravity="center"
+        android:text="KabaddiKounter"
+        android:backgroundTint="#1976D2"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+
+    <!-- Team A -->
+    <TextView
+        android:id="@+id/tv_team_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Team A"
+        android:textSize="20sp"
+        android:textColor="#444444"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_header"
+        app:layout_constraintBottom_toTopOf="@id/tv_score_a"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <TextView
+        android:id="@+id/tv_score_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/tv_team_a"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <!-- Team B -->
+    <TextView
+        android:id="@+id/tv_team_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team B"
+        android:textSize="20sp"
+        android:textColor="#444444"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_header"
+        app:layout_constraintBottom_toTopOf="@id/tv_score_b"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <TextView
+        android:id="@+id/tv_score_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/tv_team_b"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <!-- Garis pemisah -->
+    <View
+        android:id="@+id/view_separator"
+        android:layout_width="2dp"
+        android:layout_height="150dp"
+        android:background="#888888"
+        app:layout_constraintTop_toBottomOf="@id/tv_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Tombol +1 dan +2 untuk Team A -->
+    <Button
+        android:id="@+id/btn_plus1_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:backgroundTint="#1976D2"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/tv_score_a"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <Button
+        android:id="@+id/btn_plus2_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+2"
+        android:backgroundTint="#1976D2"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btn_plus1_a"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <!-- Tombol +1 dan +2 untuk Team B -->
+    <Button
+        android:id="@+id/btn_plus1_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:backgroundTint="#1976D2"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/tv_score_b"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <Button
+        android:id="@+id/btn_plus2_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+2"
+        android:backgroundTint="#1976D2"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btn_plus1_b"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <!-- Tombol RESET -->
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESET"
+        android:backgroundTint="#D32F2F"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btn_plus2_a"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <!-- Garis panduan tengah -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
