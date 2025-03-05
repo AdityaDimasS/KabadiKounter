@@ -26,22 +26,29 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+
+    buildFeatures {
+        viewBinding = true  // Menambahkan ViewBinding
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17  // Versi terbaru yang lebih optimal
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"  // Menggunakan JVM versi terbaru jika memungkinkan
     }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    // Tambahan untuk ViewModel
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
